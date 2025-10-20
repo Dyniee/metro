@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - Metro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+       </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>🔑 Đăng Nhập</h2>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="VD: user@metro.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mật Khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Đăng Nhập</button>
+            </form>
+
+            <div id="message" class="message"></div>
+            
+            <p style="text-align: center; margin-top: 1rem;">
+                Chưa có tài khoản? <a href="register_user.html">Đăng ký ngay</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Metro Facial Recognition System</p>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/login.js"></script>
+</body>
+</html>

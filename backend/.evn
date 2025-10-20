@@ -1,0 +1,5 @@
+FLASK_ENV=development
+FLASK_DEBUG=True
+SECRET_KEY=dev-secret-key-change-in-production
+DATABASE_URL=sqlite:///metro_system.db
+FACE_CONFIDENCE_THRESHOLD=0.6

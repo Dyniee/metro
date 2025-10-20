@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử - Metro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🚇 Metro Facial System</div>
+        <div class="nav-menu">
+            <a href="../index.html" class="btn-nav">🏠 Trang Chủ</a>
+            <a href="buy_ticket.html" class="btn-nav">🎫 Mua Vé</a>
+            <a href="history.html" class="btn-nav active">📊 Lịch Sử</a>
+            <a href="notifications.html" class="btn-nav">🔔 Thông Báo</a>
+            <a href="login.html" class="btn-nav">🔑 Đăng Nhập</a>
+            <a href="register_user.html" class="btn-nav">👤 Đăng Ký</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="history-container">
+            <h2>📊 Lịch Sử Mua Vé</h2>
+            <p class="subtitle">Tất cả các vé bạn đã mua.</p>
+
+            <div id="message" class="message"></div>
+
+            <div id="userInfo" class="user-info-card" style="display:none;">
+                <div class="info-row">
+                    <span class="info-label">👤 Tên User:</span>
+                    <span class="info-value" id="infoUsername"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">💰 Số Dư Ví:</span>
+                    <span class="info-value" id="infoBalance"></span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="history-table" id="historyTable" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>⏰ Ngày Mua</th>
+                            <th>🚉 Ga Đi</th>
+                            <th>🚉 Ga Đến</th>
+                            <th>📅 Giờ Đi</th>
+                            <th>💵 Phí (VNĐ)</th>
+                            <th>Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyMessage" class="empty-message" style="display:none;">
+                <p>📭 Chưa có giao dịch nào</p>
+            </div>
+
+            </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Metro Facial Recognition System</p>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/history.js"></script>
+</body>
+</html>

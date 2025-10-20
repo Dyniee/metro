@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mua Vé - Metro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .camera-ui {
+            border: 1px dashed var(--primary);
+            padding: 1rem;
+            border-radius: 8px;
+            background: #f4fafa;
+            display: none; /* Ẩn ban đầu */
+        }
+        .camera-ui video {
+            width: 100%;
+            border-radius: 8px;
+            background: #eee;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🚇 Metro Facial System</div>
+        <div class="nav-menu">
+            <a href="../index.html" class="btn-nav">🏠 Trang Chủ</a>
+            <a href="buy_ticket.html" class="btn-nav active">🎫 Mua Vé</a>
+            <a href="history.html" class="btn-nav">📊 Lịch Sử</a>
+            <a href="notifications.html" class="btn-nav">🔔 Thông Báo</a>
+            <a href="login.html" class="btn-nav">🔑 Đăng Nhập</a>
+            <a href="register_user.html" class="btn-nav">👤 Đăng Ký</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>🎫 Mua Vé Chuyến</h2>
+            <p class="subtitle">Chọn hành trình và thanh toán bằng ví của bạn.</p>
+
+            <div id="userInfo" class="user-info-card" style="display:none; background: #e0f2f1;">
+                <div class="info-row">
+                    <span class="info-label">👤 Tài khoản:</span>
+                    <span class="info-value" id="infoUsername"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">💰 Số Dư Ví:</span>
+                    <span class="info-value" id="infoBalance"></span>
+                </div>
+            </div>
+
+            <form id="buyTicketForm">
+                <div class="form-group">
+                    <label>Ga Đi</label>
+                    <select id="stationFrom" required>
+                        <option value="">-- Tải danh sách ga --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ga Đến</label>
+                    <select id="stationTo" required>
+                        <option value="">-- Tải danh sách ga --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày Đi</label>
+                    <input type="date" id="ticketDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Giờ Đi (Ước tính)</label>
+                    <input type="time" id="ticketTime" required>
+                </div>
+
+                <div id="cameraSection" class="form-group camera-ui">
+                    <label>Đăng Ký Khuôn Mặt (Lần đầu)</label>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+                        Chúng tôi cần ảnh khuôn mặt của bạn để check-in tại ga.
+                    </p>
+                    <video id="videoCapture" autoplay playsinline></video>
+                    <canvas id="canvasCapture" style="display:none;"></canvas>
+                    
+                    <button type="button" id="startCamera" class="btn-secondary">Mở Camera</button>
+                    <button type="button" id="captureImage" class="btn-secondary" style="display:none;">Chụp Ảnh</button>
+                    
+                    <div class="image-preview" style="margin-top: 1rem;">
+                        <img id="previewImg" src="" alt="Preview" style="display:none; max-width:200px; border-radius:8px;">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Mua Vé (Trừ Ví)</button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Metro Facial Recognition System</p>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/buy_ticket.js"></script>
+</body>
+</html

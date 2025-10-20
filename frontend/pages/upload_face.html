@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Mặt - Metro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">🚇 Metro Facial System</div>
+        <div class="nav-menu">
+            <a href="../index.html" class="btn-nav">🏠 Trang Chủ</a>
+            <a href="register_user.html" class="btn-nav">👤 Đăng Ký</a>
+            <a href="register_face.html" class="btn-nav">😊 Đăng Ký Mặt</a>
+            <a href="buy_ticket.html" class="btn-nav">🎫 Mua Vé</a>
+            <a href="upload_face.html" class="btn-nav active">📸 Upload Mặt</a>
+            <a href="history.html" class="btn-nav">📊 Lịch Sử</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>📸 Nhận Diện Khuôn Mặt</h2>
+            <p class="subtitle">Upload ảnh để hệ thống nhận diện bạn là ai</p>
+
+            <form id="recognizeForm">
+                <div class="form-group">
+                    <label>Chọn Ảnh Khuôn Mặt</label>
+                    <input type="file" id="recognizeImage" accept="image/*" required>
+                    <small>⚠️ Ảnh phải rõ, chỉ 1 người</small>
+                </div>
+
+                <div class="image-preview">
+                    <img id="previewImg" src="" alt="Preview" style="display:none; max-width:300px; border-radius:8px;">
+                </div>
+
+                <button type="submit" class="btn-primary">Nhận Diện</button>
+            </form>
+
+            <div id="message" class="message"></div>
+
+            <div id="resultInfo" class="result-info" style="display:none;">
+                <h3>✅ Nhận Diện Thành Công!</h3>
+                <div class="result-card">
+                    <p><strong>👤 Người Dùng:</strong> <span id="resultUsername"></span></p>
+                    <p><strong>📧 Email:</strong> <span id="resultEmail"></span></p>
+                    <p><strong>📱 SĐT:</strong> <span id="resultPhone"></span></p>
+                    <p><strong>💰 Số Dư Ví:</strong> <span id="resultBalance"></span> VNĐ</p>
+                    <p><strong>🎯 Độ Chính Xác:</strong> <span id="resultConfidence"></span>%</p>
+                </div>
+                <a href="buy_ticket.html" class="btn-primary">Tiếp Theo: Mua Vé →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Metro Facial Recognition System</p>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/upload_face.js"></script>
+</body>
+</html>

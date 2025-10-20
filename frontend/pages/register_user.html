@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký - Metro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>👤 Đăng Ký Tài Khoản</h2>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>Tên Đăng Nhập</label>
+                    <input type="text" id="username" placeholder="VD: user123" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="VD: user@metro.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mật Khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Số Điện Thoại</label>
+                    <input type="tel" id="phone" placeholder="VD: 0901234567">
+                </div>
+                
+                <div class="form-group">
+                    <label>Số Tiền Nạp Ban Đầu (VNĐ)</label>
+                    <input type="number" id="balance" placeholder="500000" value="500000" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Đăng Ký</button>
+            </form>
+
+            <div id="message" class="message"></div>
+
+            <div id="successInfo" class="success-info" style="display:none;">
+                <h3>✅ Đăng Ký Thành Công!</h3>
+                <p>Tài khoản của bạn đã được tạo.</p>
+                <a href="login.html" class="btn-primary">Tiếp Theo: Đăng Nhập →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Metro Facial Recognition System</p>
+    </footer>
+
+    <script src="../assets/js/common.js"></script> 
+    <script src="../assets/js/register_user.js"></script> 
+</body>
+</html>

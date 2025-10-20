@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk Check-in - Metro</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body { background: #333; } /* Nền tối cho Kiosk */
+        .navbar { display: none; } /* Kiosk không cần navbar */
+        .footer { display: none; } /* Kiosk không cần footer */
+        
+        .kiosk-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+        }
+        
+        .camera-ui {
+            border: 2px dashed var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        
+        .camera-ui video {
+            width: 100%;
+            border-radius: 8px;
+            background: #eee;
+        }
+
+        /* CSS cho màn hình kết quả (Đã có trong style.css) */
+    </style>
+</head>
+<body>
+
+    <div class="container kiosk-container">
+        <h2 style="text-align:center; color:#00796b;">🚇 Cổng Kiểm Soát Ra Vào</h2>
+        
+        <div class="form-group">
+            <label style="font-size: 1.2rem; font-weight: 600;">Ga Hiện Tại:</label>
+            <select id="kioskStation" class="form-group" style="padding: 1rem; font-size: 1.1rem;">
+                <option value="">-- Vui lòng chọn ga cho Kiosk này --</option>
+            </select>
+        </div>
+        
+        <div class="form-group camera-ui">
+            <label>Camera An Ninh</label>
+            <video id="videoKiosk" autoplay playsinline muted></video>
+            <canvas id="canvasKiosk" style="display:none;"></canvas>
+            
+            <button type="button" id="checkButton" class="btn-primary" style="margin-top: 1rem;">
+                Kiểm Tra Khuôn Mặt
+            </button>
+        </div>
+        
+        <div id="messageKiosk" class="message"></div>
+    </div>
+
+    <div class="result-overlay" id="resultOverlay">
+        <div class="result-box" id="resultBox">
+            <div class="icon" id="resultIcon"></div>
+            <div class="username" id="resultUsername"></div>
+            <div class="info" id="resultInfo"></div>
+        </div>
+    </div>
+    <script src="assets/common.js"></script>
+    <script src="assets/buy_ticket.js"></script> </body>
+</html>
