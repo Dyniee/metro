@@ -3,70 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiosk Check-in - Metro</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <style>
-        body { background: #333; } /* Nền tối cho Kiosk */
-        .navbar { display: none; } /* Kiosk không cần navbar */
-        .footer { display: none; } /* Kiosk không cần footer */
-        
-        .kiosk-container {
-            max-width: 700px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-        }
-        
-        .camera-ui {
-            border: 2px dashed var(--primary);
-            padding: 1.5rem;
-            border-radius: 8px;
-            background: #f9f9f9;
-        }
-        
-        .camera-ui video {
-            width: 100%;
-            border-radius: 8px;
-            background: #eee;
-        }
-
-        /* CSS cho màn hình kết quả (Đã có trong style.css) */
-    </style>
+    <title>Metro Facial Recognition System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-    <div class="container kiosk-container">
-        <h2 style="text-align:center; color:#00796b;">🚇 Cổng Kiểm Soát Ra Vào</h2>
-        
-        <div class="form-group">
-            <label style="font-size: 1.2rem; font-weight: 600;">Ga Hiện Tại:</label>
-            <select id="kioskStation" class="form-group" style="padding: 1rem; font-size: 1.1rem;">
-                <option value="">-- Vui lòng chọn ga cho Kiosk này --</option>
-            </select>
+    <nav class="navbar">
+        <div class="nav-brand">🚇 Metro Facial System</div>
+        <div class="nav-menu">
+            <a href="index.html" class="btn-nav active">🏠 Trang Chủ</a>
+            <a href="pages/buy_ticket.html" class="btn-nav">🎫 Mua Vé</a>
+            <a href="pages/history.html" class="btn-nav">📊 Lịch Sử</a>
+            <a href="pages/notifications.html" class="btn-nav">🔔 Thông Báo</a>
+            <a href="pages/login.html" class="btn-nav">🔑 Đăng Nhập</a>
+            <a href="pages/register_user.html" class="btn-nav">👤 Đăng Ký</a>
         </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🚇 Hệ Thống Bán Vé Metro FaceID</h1>
+        <p>Đăng ký tài khoản, mua vé trực tuyến và check-in bằng khuôn mặt.</p>
         
-        <div class="form-group camera-ui">
-            <label>Camera An Ninh</label>
-            <video id="videoKiosk" autoplay playsinline muted></video>
-            <canvas id="canvasKiosk" style="display:none;"></canvas>
+        <div class="hero-features">
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3>Đăng Ký Tài Khoản</h3>
+                <p>Tạo tài khoản, nạp tiền vào ví và đăng ký khuôn mặt.</p>
+                <a href="pages/register_user.html" class="btn-primary">Đăng Ký Ngay</a>
+            </div>
             
-            <button type="button" id="checkButton" class="btn-primary" style="margin-top: 1rem;">
-                Kiểm Tra Khuôn Mặt
-            </button>
+            <div class="feature-card">
+                <div class="feature-icon">🔑</div>
+                <h3>Đăng Nhập</h3>
+                <p>Truy cập tài khoản của bạn để quản lý và mua vé.</p>
+                <a href="pages/login.html" class="btn-primary">Đăng Nhập</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎫</div>
+                <h3>Mua Vé Trực Tuyến</h3>
+                <p>Chọn ga đi, ga đến, giờ khởi hành và thanh toán bằng ví.</p>
+                <a href="pages/buy_ticket.html" class="btn-primary">Mua Vé</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Xem Lịch Sử</h3>
+                <p>Theo dõi tất cả các vé bạn đã mua và các chuyến đi.</p>
+                <a href="pages/history.html" class="btn-primary">Xem Lịch Sử</a>
+            </div>
         </div>
-        
-        <div id="messageKiosk" class="message"></div>
     </div>
 
-    <div class="result-overlay" id="resultOverlay">
-        <div class="result-box" id="resultBox">
-            <div class="icon" id="resultIcon"></div>
-            <div class="username" id="resultUsername"></div>
-            <div class="info" id="resultInfo"></div>
-        </div>
-    </div>
-    <script src="assets/common.js"></script>
-    <script src="assets/buy_ticket.js"></script> 
+    <footer class="footer">
+        <p>&copy; 2024 Metro Facial Recognition System. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
 </body>
 </html>
